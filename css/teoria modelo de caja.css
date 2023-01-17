@@ -1,0 +1,91 @@
+/* modelo de caja 
+Es un concepto teorico de css que representa cada elemento html en base a sus propiedades de:
+margin,border,padding y las dimensiones(alto y ancho).
+
+En el modelo de caja el ancho total de un elemento html equivale a la sumatoria de los valores de: 
+width + padding-left + padding-right + border-letf-width + border-right-width.
+
+de manera similar aplica para el alto total de cada elemento aunque margin-left y margin-right aunque 
+forman parte del modelo de caja, no se incluyen para el calculo del ancho total.
+
+con la propiedad box-sizing con el valor de border-box de esta propiedad, podemos modificar el comportamiento 
+del modelo de caja para que nuestro elemento nunca supere el tamaño maximo que le hayamos definido en 
+width y height. Esta es la opción recomendada para trabajar. */
+
+/*
+clase 26: Tipos de display
+
+Display es la propiedad de css que indica cómo debe ser mostrado un elemento html. 
+Todos los elementos tienen algún tipo de display. Si un elemento no se ve en pantalla es porque 
+su display es none
+
+los valores mas comunes que puede recibir la propiedad display son:
+
+_block: el elemento intenta abarcar todo el ancho posible.
+_inline: reduce su tamaño exclusivamente hasta lo que abarca su contenido. Descartando las propiedades
+de width y heigth.
+_inline-block:  Combina lo mejor de block e inline, ya que respeta las dimensiones indicadas en las
+propiedades width y height, pero coloca el elemento en linea (al costado) de elementos hermanos 
+que también tengan display: inline o inline-block.
+_flex: Asume algunas propiedades por defecto que favorecen la alineación de los elementos internos.
+_grid: Similar a flex, asume algunas propiedades por defecto organizando los contenidos en filas y columnas.
+_none: oculta  el elemento.*/
+
+/*
+clase 27. Propiedades de flexbox.
+Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, 
+dimensionamiento y distribución de elemento html.
+
+Esta propiedad se aplica a un elemento padre, pero va a afectar principalmente a sus elementos hijos 
+directos. Por defecto, los elementos internos quedan alineados unos seguidos de otros. El comportamiento 
+del modelo de caja de estos elementos hijos también se ha modificado. ya que pierden el efecto de su
+propiedad margin.
+
+Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades
+que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto 
+a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinamica 
+en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinamicamente
+las siguientes filas hacia abajo.
+*/
+
+/*
+clase 28. Alineando elementos de forma horizontal
+
+La propiedad de css que nos permite definir la forma en que se alinearán o distribuirán los hijos de un elemento
+al que se le ha asignado un display flex es : justify-content. Y que puede tomar entre otros valores los 
+siguientes:
+
+_flex-start: para alinear todos los elementos hacia el inicio del espacio disponible.
+_flex-end: para alinear todos los elementos hacia el final, a la derecha.
+_center: para alinear todos los elementos al centro del espacio disponible.
+_space-between: para distribuir los elementos con un espacio proporcional e igual entre ellos.
+_space-evenly: para distribuir los elementos con un espacio proporcional e igual entre ellos 
+(incluyendo el primer y ultimo elementos con respecto a los extremos del espacio disponible).
+_space_around: Similar a space-evenly pero tanto en el primero como en el ultimo elemento, el 
+espacio hacia los extremos es la mitad del espacio usado entre los elementos. 
+*/
+
+/*
+clase 29. Alineando elementos de forma vertical
+
+Similar como sucede con justify-content, ees posible alinear y distribuir  los elementos internos  en el 
+espacio vertical disponible usando la propiedad align-items, que puede tomar también los valores de:
+flex-start, flex-end y center.
+
+Algo que ees muy importante y se debe tener en cuenta a la hora de usar align-items y justify-content 
+es que dependiendo de la propiedad flex-direction que se haya definido, el efecto de ambos se invierte
+no en cuanto a sus elementos internos, sino en cuanto a si se debe usar uno u otra de manera vertical 
+u horizontal.
+
+IMPORTANTE: Cuando la propiedad flex-direction se ha definido como column, la propiedad justify-content 
+ya no va a aplicar sobre la alineación horizontal sino sobre la alineación vertical. Y align-items ya no
+aplicaria sobre la alineación vertical sino horizontal. Se intercambian sus efectos.
+
+Para centrar completamente los elementos internos de manera vertical y horizontal en su elemento padre 
+debemos usar el valor de center en ambas propiedades.
+
+align-self: es el mismo elemento y tiene los mismos  valores que align-items
+
+list-style: es el numero de las listas.
+
+*/
